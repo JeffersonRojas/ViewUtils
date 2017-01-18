@@ -26,6 +26,7 @@ import static com.github.jeffersonrojas.viewutils.library.CustomFont.getMyCustom
  * Created by Jefferson Rojas on 18/01/2017.
  */
 
+@SuppressWarnings("unused")
 public class TextView extends AppCompatTextView {
 
     public TextView(Context context, AttributeSet attrs) {

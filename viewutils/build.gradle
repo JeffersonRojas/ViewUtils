@@ -15,6 +15,8 @@
  */
 
 apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
 
 //noinspection GroovyMissingReturnStatement
 android {
@@ -41,31 +43,87 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.1.0'
 }
 
-ext {
-    bintrayRepo = 'maven'
-    bintrayName = 'viewutils'
-
-    publishedGroupId = 'com.github.jeffersonrojas'
-    libraryName = 'ViewUtils'
-    artifact = 'viewutils'
-
-    libraryDescription = 'A library for android which helps you to custom a some views more easily'
-
-    // Your github repo link
-    siteUrl = 'https://github.com/JeffersonRojas/ViewUtils'
-    gitUrl = 'https://github.com/JeffersonRojas/ViewUtils.git'
-    githubRepository= 'JeffersonRojas/ViewUtils'
-
-    libraryVersion = '1.0.0'
-
-    developerId = 'JeffersonRojas'
-    developerName = 'Jefferson Rojas'
-    developerEmail = 'fejerson108@gmail.com'
-
-    licenseName = 'The Apache Software License, Version 2.0'
-    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-    allLicenses = ["Apache-2.0"]
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
 }
 
-apply from: 'https://raw.githubusercontent.com/nisrulz/JCenter/master/installv1.gradle'
-apply from: 'https://raw.githubusercontent.com/nisrulz/JCenter/master/bintrayv1.gradle'
+task javadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath +=project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    //noinspection GroovyAccessibility
+    from javadoc.destinationDir
+}
+
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}
+
+group = 'com.github.jeffersonrojas'
+version = '1.0.1'
+
+install {
+    repositories.mavenInstaller {
+        pom.project {
+            name 'viewutils'
+            description 'A library for android which helps you to custom a some views more easily.'
+            url 'https://github.com/JeffersonRojas/ViewUtils'
+            inceptionYear '2017'
+
+            packaging 'aar'
+            groupId 'com.github.jeffersonrojas'
+            artifactId 'viewutils'
+            version '1.0.1'
+
+            licenses {
+                license {
+                    name "The Apache Software License, Version 2.0"
+                    url "http://www.apache.org/licenses/LICENSE-2.0.txt"
+                    distribution "repo"
+                }
+            }
+
+            developers {
+                developer {
+                    id  'JeffersonRojas'
+                    name 'Jefferson Rojas'
+                    email 'fejerson108@gmail.com'
+                }
+            }
+            scm {
+                connection 'https://github.com/JeffersonRojas/ViewUtils.git'
+                developerConnection 'JeffersonRojas/ViewUtils'
+                url 'https://github.com/JeffersonRojas/ViewUtils'
+
+            }
+        }
+    }
+}
+
+Properties bintrayProperties = new Properties()
+bintrayProperties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+bintray {
+    user = bintrayProperties.getProperty('bintray.user')
+    key = bintrayProperties.get('bintray.apikey')
+    configurations = ['archives']
+    pkg {
+        repo = 'maven'
+        name = 'viewutils'
+        userOrg = bintrayProperties.getProperty('bintray.user')
+        licenses = ['Apache-2.0']
+        vcsUrl = 'https://github.com/JeffersonRojas/ViewUtils.git'
+        publish = true
+        version {
+            name = '1.0.1'
+            desc = 'A library for android which helps you to custom a some views more easily.'
+            released = new Date()
+            vcsTag = '1.0.1'
+        }
+    }
+}
