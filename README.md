@@ -4,6 +4,11 @@ ViewUtils Library
 
 The ViewUtils is a library for android which helps you to custom a some views more easily.
 
+Fonts
+=====
+Add your fonts without java.
+![Screenshot](https://github.com/JeffersonRojas/ViewUtils/blob/master/Screenshot.png)
+
 Download ViewUtils to your project
 ================================
 Add the following code to your module's build.gradle file:
