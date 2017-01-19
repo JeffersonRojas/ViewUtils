@@ -106,7 +106,10 @@ install {
 }
 
 Properties bintrayProperties = new Properties()
-bintrayProperties.load(project.rootProject.file('bintray.properties').newDataInputStream())
+
+if (project.rootProject.file('bintray.properties').exists()) {
+    bintrayProperties.load(project.rootProject.file('bintray.properties').newDataInputStream())
+}
 
 bintray {
     user = bintrayProperties.getProperty('user')
