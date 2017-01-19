@@ -13,7 +13,7 @@ Add your fonts without java.
 ![screenshot](https://github.com/JeffersonRojas/ViewUtils/blob/master/CreateAssetsFolder.png "Create Assets Folder")
 2. Create a subdirectory `fonts/` in assets
 ![screenshot](https://github.com/JeffersonRojas/ViewUtils/blob/master/CreateSubdirectoyFonts.png "Create Subdirectoy Fonts")
-3. Add your custom fonts to Android Studio
+3. Add your custom fonts to Android Studio like this, and you can start to use ViewUtils
 ![screenshot](https://github.com/JeffersonRojas/ViewUtils/blob/master/FontsFolderExample.png "Fonts Folder Example")
 4. Set your custom font in xml or from styles, if your font is in format `.ttf` just add `app:font="amazing font"`, for other formarts you need add `app:fontType="otf"`
 
