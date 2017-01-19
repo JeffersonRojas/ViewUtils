@@ -26,8 +26,8 @@ android {
     defaultConfig {
         minSdkVersion 10
         targetSdkVersion 25
-        versionCode 3
-        versionName "1.0.2"
+        versionCode 4
+        versionName "1.0.3"
     }
     buildTypes {
         release {
@@ -65,7 +65,7 @@ artifacts {
 }
 
 group = 'com.github.jeffersonrojas'
-version = '1.0.2'
+version = '1.0.3'
 
 install {
     repositories.mavenInstaller {
@@ -78,7 +78,7 @@ install {
             packaging 'aar'
             groupId 'com.github.jeffersonrojas'
             artifactId 'viewutils'
-            version '1.0.2'
+            version '1.0.3'
 
             licenses {
                 license {
@@ -123,10 +123,10 @@ bintray {
         vcsUrl = 'https://github.com/JeffersonRojas/ViewUtils.git'
         publish = true
         version {
-            name = '1.0.2'
+            name = '1.0.3'
             desc = 'A library for android which helps you to custom a some views more easily.'
             released = new Date()
-            vcsTag = '1.0.2'
+            vcsTag = '1.0.3'
         }
     }
 }
