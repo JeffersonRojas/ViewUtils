@@ -3,6 +3,18 @@
 
 The ViewUtils is a library for android which helps you to custom a some views more easily.
 
+##Download ViewUtils to your project
+Add the following code to your module's build.gradle file:
+```xml
+repositories {
+    maven { url 'https://dl.bintray.com/fejerson108/maven' }
+}
+
+dependencies {
+    compile 'com.github.jeffersonrojas:viewutils:1.0.2'
+}
+```
+
 ##Fonts
 Add your fonts without java.
 
@@ -56,18 +68,6 @@ Add your fonts without java.
 <com.github.jeffersonrojas.viewutils.library.TextView
     android:text="Hello world!"
     style="@style/TextView.Toolbar" />
-```
-
-##Download ViewUtils to your project
-Add the following code to your module's build.gradle file:
-```xml
-repositories {
-    maven { url 'https://dl.bintray.com/fejerson108/maven' }
-}
-
-dependencies {
-    compile 'com.github.jeffersonrojas:viewutils:1.0.2'
-}
 ```
 
 ##Developer
