@@ -15,7 +15,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.github.jeffersonrojas:viewutils:1.0.2'
+    compile 'com.github.jeffersonrojas:viewutils:1.0.3'
 }
 ```
 
