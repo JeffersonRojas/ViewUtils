@@ -6,8 +6,9 @@ The ViewUtils is a library for android which helps you to custom a some views mo
 
 Fonts
 =====
-Add your fonts without java.
-![Screenshot](https://github.com/JeffersonRojas/ViewUtils/blob/master/Screenshot.png)
+Add your fonts without java.  
+
+![screenshot](https://github.com/JeffersonRojas/ViewUtils/blob/master/Screenshot.png "Font Samples")
 
 Download ViewUtils to your project
 ================================
