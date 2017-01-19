@@ -1,5 +1,9 @@
 #ViewUtils Library
-[ ![Download](https://api.bintray.com/packages/fejerson108/maven/viewutils/images/download.svg) ](https://bintray.com/fejerson108/maven/viewutils/_latestVersion)
+[![Build](https://api.travis-ci.org/JeffersonRojas/ViewUtils.svg?branch=master)](https://travis-ci.org/JeffersonRojas/ViewUtils)
+[![API](https://img.shields.io/badge/API-10%2B-blue.svg)](https://android-arsenal.com/api?level=10)
+[![Download](https://api.bintray.com/packages/fejerson108/maven/viewutils/images/download.svg)](https://bintray.com/fejerson108/maven/viewutils/_latestVersion) 
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0)
+
 
 The ViewUtils is a library for android which helps you to custom a some views more easily.
 
