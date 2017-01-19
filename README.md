@@ -19,13 +19,6 @@ Add your fonts without java.
 
 ###Examples of use
 ```xml
-<!-- Font format .ttf -->
-<com.github.jeffersonrojas.viewutils.library.TextView
-    android:layout_height="wrap_content"
-    android:layout_width="wrap_content"
-    android:text="Hello world!"
-    app:font="amazing font" />
-
 <!-- Font format .otf -->
 <com.github.jeffersonrojas.viewutils.library.TextView
     android:layout_height="wrap_content"
