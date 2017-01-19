@@ -16,4 +16,5 @@
 
 <resources>
     <string name="app_name">ViewUtils</string>
+    <string name="font_from_string">ParryHotter</string>
 </resources>

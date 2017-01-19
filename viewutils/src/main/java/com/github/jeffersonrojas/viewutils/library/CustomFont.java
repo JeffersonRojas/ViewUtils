@@ -18,6 +18,7 @@ package com.github.jeffersonrojas.viewutils.library;
 
 import android.content.Context;
 import android.content.res.AssetManager;
+import android.content.res.TypedArray;
 import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -28,27 +29,27 @@ import android.util.Log;
 
 class CustomFont {
 
-    private static final String AtributeFont = "font";
-    private static final String AtributeFontType = "fontType";
     private static final String FontFolder = "fonts/";
     private static final String FontTypeDefault = "ttf";
 
     static Typeface getMyCustomFont(Context context, AttributeSet attrs) {
         String fontPath = FontFolder;
         String fontType = FontTypeDefault;
-        for (int i = 0; i < attrs.getAttributeCount(); i++) {
-            if (attrs.getAttributeName(i).equals(AtributeFontType))
-                fontType = attrs.getAttributeValue(i);
-            if (attrs.getAttributeName(i).equals(AtributeFont))
-                fontPath += attrs.getAttributeValue(i);
-        }
+
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.app);
+        if (typedArray.getString(R.styleable.app_font) != null)
+            fontPath += typedArray.getString(R.styleable.app_font);
+        if (typedArray.getString(R.styleable.app_fontType) != null)
+            fontType = typedArray.getString(R.styleable.app_fontType);
+        typedArray.recycle();
+
         if (!fontPath.equals(FontFolder)) {
             fontPath += "." + fontType;
             AssetManager assetManager = context.getAssets();
             try {
                 return Typeface.createFromAsset(assetManager, fontPath);
             } catch (RuntimeException e) {
-                Log.e(context.getClass().getSimpleName(), "Error al cargar la fuente", e);
+                Log.e(context.getClass().getSimpleName(), "Error loadig the font ", e);
             }
         }
         return Typeface.DEFAULT;
