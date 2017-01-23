@@ -14,19 +14,65 @@ dependencies {
     compile 'com.github.jeffersonrojas:viewutils:1.0.4'
 }
 ```
+## Vector Support Compound Drawables
+Add Vector Compound Drawables since api 10, and specify the tint color.
 
-##Fonts
+### Usage
+1. first configure your project for use the library support vectors, if you do not know how to configure you can follow this [tutorial](https://developer.android.com/studio/write/vector-asset-studio.html)
+2. set your vector compound drawables
+```xml
+ <com.github.jeffersonrojas.viewutils.library.EditText
+        app:tintCompound="@color/colorAccent"
+        app:drawableStart="@drawable/ic_your_vector"
+        app:drawableTop="@drawable/ic_your_vector"
+        app:drawableEnd="@drawable/ic_your_vector"
+        app:drawableBottom="@drawable/ic_your_vector"
+        ... />
+
+ <com.github.jeffersonrojas.viewutils.library.EditText
+        app:tintDrawableStart="@color/blue"
+        app:drawableStart="@drawable/ic_your_vector"
+        app:tintDrawableTop="@color/red"
+        app:drawableTop="@drawable/ic_your_vector"
+        app:tintDrawableEnd="@color/green"
+        app:drawableEnd="@drawable/ic_your_vector"
+        app:tintDrawableBottom="@color/yellow"
+        app:drawableBottom="@drawable/ic_your_vector"
+        ... />
+```
+### Examples of use using styles
+```xml
+<style name="MyStyle">
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="tintCompound">@color/colorAccent</item>
+    <item name="drawableStart">@drawable/ic_your_vector</item>
+</style>
+```
+```xml
+<com.github.jeffersonrojas.viewutils.library.TextView
+    android:text="Hello world!"
+    style="@style/MyStyle" />
+
+<com.github.jeffersonrojas.viewutils.library.Button
+    android:text="Hello world!"
+    style="@style/MyStyle" />
+
+<com.github.jeffersonrojas.viewutils.library.EditText
+    android:text="Hello world!"
+    style="@style/MyStyle" />
+```
+
+## Fonts
 Add your fonts without java.
 
-![screenshot](https://github.com/JeffersonRojas/ViewUtils/blob/master/Screenshot.png "Font Samples")
-
-###Usage
-1. Create the `assets/fonts` folder, if you do not know how to create the assets folder you can follow this [tutorial](http://abhiandroid.com/androidstudio/create-assets-folder-android-studio-html-files.html)  
+### Usage
+1. Create the `assets/fonts` folder, if you do not know how to create the assets folder you can follow this [tutorial](http://abhiandroid.com/androidstudio/create-assets-folder-android-studio-html-files.html)
 2. Add your custom fonts to Android Studio like this, and you can start to use ViewUtils
 ![screenshot](https://github.com/JeffersonRojas/ViewUtils/blob/master/FontsFolderExample.png "Fonts Folder Example")
 3. Set your custom font in xml or from styles, if your font is in format `.ttf` just add `app:font="amazing font"`, for other formarts you need add `app:fontType="otf"`
 
-###Examples of use
+### Examples of use
 ```xml
 <!-- Font format .otf -->
 <com.github.jeffersonrojas.viewutils.library.TextView
@@ -35,7 +81,7 @@ Add your fonts without java.
     android:text="Hello world!"
     app:font="amazing font"
     app:fontType="otf" />
-    
+
 <!-- Font for EditText -->
 <com.github.jeffersonrojas.viewutils.library.EditText
     android:layout_width="match_parent"
@@ -43,7 +89,7 @@ Add your fonts without java.
     android:text="Hello world!"
     android:hint="Hi"
     app:font="amazing font" />
-    
+
 <!-- Font for Button -->
 <com.github.jeffersonrojas.viewutils.library.Button
     android:layout_width="wrap_content"
@@ -51,7 +97,7 @@ Add your fonts without java.
     android:text="Button"
     app:font="amazing font" />
 ```
-###Examples of use using styles
+### Examples of use using styles
 ```xml
 <style name="MyStyle">
     <item name="android:layout_width">wrap_content</item>
@@ -67,7 +113,7 @@ Add your fonts without java.
     style="@style/MyStyle" />
 ```
 
-##Developer
+## Developer
 [Jefferson Rojas](mailto:fejerson108@gmail.com)
 
 
