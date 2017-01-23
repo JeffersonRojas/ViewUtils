@@ -67,7 +67,7 @@ Add your fonts without java.
 <!-- Font from style -->
 <com.github.jeffersonrojas.viewutils.library.TextView
     android:text="Hello world!"
-    style="@style/TextView.Toolbar" />
+    style="@style/MyStyle" />
 ```
 
 ##Developer
