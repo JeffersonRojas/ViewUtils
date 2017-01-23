@@ -10,10 +10,6 @@ The ViewUtils is a library for android which helps you to custom a some views mo
 ##Download ViewUtils to your project
 Add the following code to your module's build.gradle file:
 ```xml
-repositories {
-    maven { url 'https://dl.bintray.com/fejerson108/maven' }
-}
-
 dependencies {
     compile 'com.github.jeffersonrojas:viewutils:1.0.3'
 }
