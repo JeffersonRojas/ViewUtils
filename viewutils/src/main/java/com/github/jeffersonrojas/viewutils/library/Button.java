@@ -24,21 +24,19 @@ import android.graphics.drawable.RippleDrawable;
 import android.graphics.drawable.StateListDrawable;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
-import android.support.v7.widget.AppCompatButton;
 import android.util.AttributeSet;
 import android.util.Log;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-import static com.github.jeffersonrojas.viewutils.library.CustomFont.getMyCustomFont;
+import static com.github.jeffersonrojas.viewutils.library.CustomView.initView;
 
 /**
  * Created by Jefferson Rojas on 18/01/2017.
  */
 
-@SuppressWarnings("unused")
-public class Button extends AppCompatButton {
+public class Button extends android.widget.Button {
 
     public Button(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -51,11 +49,12 @@ public class Button extends AppCompatButton {
     }
 
     private void init(Context context, AttributeSet attrs) {
-        setTypeface(getMyCustomFont(context, attrs));
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
+        initView(this,attrs);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
             setRipple(context, attrs);
-        else
+        } else {
             setColorStates(context, attrs);
+        }
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -179,7 +178,7 @@ public class Button extends AppCompatButton {
         typedArray.recycle();
     }
 
-    /*private int saturar (ColorDrawable colorDrawable, float scale) {
+   /*private int saturar (ColorDrawable colorDrawable, float scale) {
         float[] hsv = new float[3];
         Color.colorToHSV(colorDrawable.getColor(),hsv);
         hsv[1] *= scale;

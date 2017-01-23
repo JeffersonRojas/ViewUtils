@@ -21,5 +21,14 @@
         <attr name="fontType" format="string" />
         <attr name="normalColor" format="color" />
         <attr name="pressedColor" format="color" />
+        <attr name="tintCompound" format="color" />
+        <attr name="tintDrawableStart" format="color" />
+        <attr name="drawableStart" format="reference"/>
+        <attr name="tintDrawableEnd" format="color" />
+        <attr name="drawableEnd" format="reference"/>
+        <attr name="tintDrawableTop" format="color" />
+        <attr name="drawableTop" format="reference"/>
+        <attr name="tintDrawableBottom" format="color" />
+        <attr name="drawableBottom" format="reference"/>
     </declare-styleable>
 </resources>

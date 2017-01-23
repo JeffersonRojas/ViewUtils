@@ -17,25 +17,25 @@
 package com.github.jeffersonrojas.viewutils.library;
 
 import android.content.Context;
-import android.support.v7.widget.AppCompatEditText;
 import android.util.AttributeSet;
 
-import static com.github.jeffersonrojas.viewutils.library.CustomFont.getMyCustomFont;
+import static com.github.jeffersonrojas.viewutils.library.CustomView.initView;
 
 /**
  * Created by Jefferson Rojas on 18/01/2017.
  */
 
 @SuppressWarnings("unused")
-public class EditText extends AppCompatEditText {
+public class EditText extends android.widget.EditText {
 
     public EditText(Context context, AttributeSet attrs) {
         super(context, attrs);
-        setTypeface(getMyCustomFont(context, attrs));
+        initView(this,attrs);
     }
 
     public EditText(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        setTypeface(getMyCustomFont(context, attrs));
+        initView(this,attrs);
     }
+
 }

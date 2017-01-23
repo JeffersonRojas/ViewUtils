@@ -11,7 +11,7 @@ The ViewUtils is a library for android which helps you to custom a some views mo
 Add the following code to your module's build.gradle file:
 ```xml
 dependencies {
-    compile 'com.github.jeffersonrojas:viewutils:1.0.3'
+    compile 'com.github.jeffersonrojas:viewutils:1.0.4'
 }
 ```
 

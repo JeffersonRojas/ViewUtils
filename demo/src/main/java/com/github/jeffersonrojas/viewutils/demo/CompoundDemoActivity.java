@@ -17,13 +17,18 @@
 package com.github.jeffersonrojas.viewutils.demo;
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
-public class DemoActivity extends AppCompatActivity {
+/**
+ * Created by Jefferson Rojas on 23/01/2017.
+ */
+
+public class CompoundDemoActivity extends AppCompatActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_demo);
+        setContentView(R.layout.activity_demo_compound);
     }
 }
