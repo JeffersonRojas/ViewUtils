@@ -24,6 +24,7 @@ import android.graphics.drawable.RippleDrawable;
 import android.graphics.drawable.StateListDrawable;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
+import android.support.v7.widget.AppCompatButton;
 import android.util.AttributeSet;
 import android.util.Log;
 
@@ -36,7 +37,7 @@ import static com.github.jeffersonrojas.viewutils.library.CustomView.initView;
  * Created by Jefferson Rojas on 18/01/2017.
  */
 
-public class Button extends android.widget.Button {
+public class Button extends AppCompatButton {
 
     public Button(Context context, AttributeSet attrs) {
         super(context, attrs);

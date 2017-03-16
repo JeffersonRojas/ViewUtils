@@ -17,6 +17,7 @@
 package com.github.jeffersonrojas.viewutils.library;
 
 import android.content.Context;
+import android.support.v7.widget.AppCompatEditText;
 import android.util.AttributeSet;
 
 import static com.github.jeffersonrojas.viewutils.library.CustomView.initView;
@@ -26,7 +27,7 @@ import static com.github.jeffersonrojas.viewutils.library.CustomView.initView;
  */
 
 @SuppressWarnings("unused")
-public class EditText extends android.widget.EditText {
+public class EditText extends AppCompatEditText {
 
     public EditText(Context context, AttributeSet attrs) {
         super(context, attrs);

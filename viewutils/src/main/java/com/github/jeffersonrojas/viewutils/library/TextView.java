@@ -17,6 +17,7 @@
 package com.github.jeffersonrojas.viewutils.library;
 
 import android.content.Context;
+import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
 
 import static com.github.jeffersonrojas.viewutils.library.CustomView.initView;
@@ -26,7 +27,7 @@ import static com.github.jeffersonrojas.viewutils.library.CustomView.initView;
  */
 
 @SuppressWarnings("unused")
-public class TextView extends android.widget.TextView {
+public class TextView extends AppCompatTextView {
 
     public TextView(Context context, AttributeSet attrs) {
         super(context, attrs);

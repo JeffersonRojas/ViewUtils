@@ -24,8 +24,8 @@ android {
         applicationId "com.github.jeffersonrojas.viewutils.demo"
         minSdkVersion 10
         targetSdkVersion 25
-        versionCode 5
-        versionName "1.0.4"
+        versionCode 6
+        versionName "1.0.5"
     }
     buildTypes {
         release {
@@ -41,7 +41,7 @@ repositories {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:appcompat-v7:25.1.0'
-    compile 'com.android.support:design:25.1.0'
+    compile 'com.android.support:appcompat-v7:25.3.0'
+    compile 'com.android.support:design:25.3.0'
     compile project(':viewutils')
 }
