@@ -33,10 +33,6 @@ public class MainDemoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main_demo);
     }
 
-    public void startDemoFonts(View view) {
-        startActivity(new Intent(this,FontDemoActivity.class));
-    }
-
     public void startDemoCompound(View view) {
         startActivity(new Intent(this,CompoundDemoActivity.class));
     }

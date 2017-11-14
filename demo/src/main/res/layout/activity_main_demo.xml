@@ -28,14 +28,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:onClick="startDemoFonts"
-        android:text="Fonts Demo"
-        app:font="neuropol x rg"/>
-
-    <com.github.jeffersonrojas.viewutils.library.Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
         android:text="Vector Compound Drawables"
         android:onClick="startDemoCompound"
         app:tintCompound="@color/colorAccent"

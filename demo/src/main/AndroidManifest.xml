@@ -36,9 +36,6 @@
         </activity>
         <activity
             android:parentActivityName=".MainDemoActivity"
-            android:name=".FontDemoActivity" />
-        <activity
-            android:parentActivityName=".MainDemoActivity"
             android:name=".CompoundDemoActivity"
             android:theme="@style/AppTheme.Toolbar"
             android:label="Compound Demo"/>

@@ -17,16 +17,13 @@
 package com.github.jeffersonrojas.viewutils.library;
 
 import android.content.Context;
-import android.content.res.AssetManager;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
-import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.v4.graphics.drawable.DrawableCompat;
 import android.support.v7.content.res.AppCompatResources;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 
 /**
@@ -35,13 +32,8 @@ import android.view.View;
 
 class CustomView {
 
-    private static final String FontFolder = "fonts/";
-    private static final String FontTypeDefault = "ttf";
-
     static void initView(View view, AttributeSet attrs) {
-        if (attrs == null) {
-            return;
-        }
+        if (attrs == null) return;
         Context context = view.getContext();
         Drawable drawableStart = createDrawableFromVector(context,attrs,R.styleable.app_drawableStart,R.styleable.app_tintDrawableStart);
         Drawable drawableTop = createDrawableFromVector(context,attrs,R.styleable.app_drawableTop,R.styleable.app_tintDrawableTop);
@@ -49,7 +41,6 @@ class CustomView {
         Drawable drawableBottom = createDrawableFromVector(context,attrs,R.styleable.app_drawableBottom,R.styleable.app_tintDrawableBottom);
         if (view instanceof TextView) {
             TextView textView = (TextView) view;
-            textView.setTypeface(getMyCustomFont(context,attrs));
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
                 textView.setCompoundDrawablesRelativeWithIntrinsicBounds(drawableStart,drawableTop,drawableEnd,drawableBottom);
             } else {
@@ -57,7 +48,6 @@ class CustomView {
             }
         } else if (view instanceof EditText) {
             EditText editText = (EditText) view;
-            editText.setTypeface(getMyCustomFont(context,attrs));
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
                 editText.setCompoundDrawablesRelativeWithIntrinsicBounds(drawableStart, drawableTop, drawableEnd, drawableBottom);
             } else {
@@ -65,36 +55,12 @@ class CustomView {
             }
         } else if (view instanceof Button) {
             Button button = (Button) view;
-            button.setTypeface(getMyCustomFont(context,attrs));
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
                 button.setCompoundDrawablesRelativeWithIntrinsicBounds(drawableStart, drawableTop, drawableEnd, drawableBottom);
             } else {
                 button.setCompoundDrawablesWithIntrinsicBounds(drawableStart, drawableTop, drawableEnd, drawableBottom);
             }
         }
-    }
-
-    private static Typeface getMyCustomFont(Context context, AttributeSet attrs) {
-        String fontPath = FontFolder;
-        String fontType = FontTypeDefault;
-
-        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.app);
-        if (typedArray.getString(R.styleable.app_font) != null)
-            fontPath += typedArray.getString(R.styleable.app_font);
-        if (typedArray.getString(R.styleable.app_fontType) != null)
-            fontType = typedArray.getString(R.styleable.app_fontType);
-        typedArray.recycle();
-
-        if (!fontPath.equals(FontFolder)) {
-            fontPath += "." + fontType;
-            AssetManager assetManager = context.getAssets();
-            try {
-                return Typeface.createFromAsset(assetManager, fontPath);
-            } catch (RuntimeException e) {
-                Log.e(context.getClass().getSimpleName(), "Error loadig the font ", e);
-            }
-        }
-        return Typeface.DEFAULT;
     }
 
     private static Drawable createDrawableFromVector(Context context, AttributeSet attrs, int drawableAttrsId, int drawableTintId) {

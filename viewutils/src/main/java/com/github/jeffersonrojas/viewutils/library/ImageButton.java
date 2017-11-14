@@ -37,6 +37,7 @@ import static com.github.jeffersonrojas.viewutils.library.CustomView.initView;
  * Created by Jefferson Rojas on 19/04/17.
  */
 
+@SuppressWarnings("unused")
 public class ImageButton extends AppCompatImageButton {
 
     public ImageButton(Context context, AttributeSet attrs) {

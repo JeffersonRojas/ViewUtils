@@ -15,19 +15,15 @@
  */
 
 apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
-apply plugin: 'com.jfrog.bintray'
 
-//noinspection GroovyMissingReturnStatement
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
-
+    compileSdkVersion versions.compileSdk
+    buildToolsVersion versions.buildTools
     defaultConfig {
-        minSdkVersion 10
-        targetSdkVersion 25
-        versionCode 7
-        versionName "1.0.6"
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.compileSdk
+        versionCode versions.releaseCode
+        versionName versions.releaseTag
     }
     buildTypes {
         release {
@@ -39,94 +35,34 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile "com.android.support:appcompat-v7:$versions.supportLibrary"
 }
 
-task sourcesJar(type: Jar) {
-    from android.sourceSets.main.java.srcDirs
-    classifier = 'sources'
-}
+ext {
+    bintrayRepo = 'android'
+    bintrayName = 'viewutils'
 
-task javadoc(type: Javadoc) {
-    source = android.sourceSets.main.java.srcDirs
-    classpath +=project.files(android.getBootClasspath().join(File.pathSeparator))
-}
+    publishedGroupId = 'com.github.jeffersonrojas'
+    libraryName = 'viewutils'
+    artifact = 'viewutils'
 
-task javadocJar(type: Jar, dependsOn: javadoc) {
-    classifier = 'javadoc'
-    //noinspection GroovyAccessibility
-    from javadoc.destinationDir
-}
+    libraryDescription = 'A library for android which helps you to custom a some views more easily.'
 
-artifacts {
-    archives javadocJar
-    archives sourcesJar
-}
+    siteUrl = 'https://github.com/JeffersonRojas/ViewUtils'
+    gitUrl = 'https://github.com/JeffersonRojas/ViewUtils.git'
 
-group = 'com.github.jeffersonrojas'
-version = '1.0.6'
+    libraryVersion = versions.releaseTag
 
-install {
-    repositories.mavenInstaller {
-        pom.project {
-            name 'viewutils'
-            description 'A library for android which helps you to custom a some views more easily.'
-            url 'https://github.com/JeffersonRojas/ViewUtils'
-            inceptionYear '2017'
-
-            packaging 'aar'
-            groupId 'com.github.jeffersonrojas'
-            artifactId 'viewutils'
-            version '1.0.6'
-
-            licenses {
-                license {
-                    name "The Apache Software License, Version 2.0"
-                    url "http://www.apache.org/licenses/LICENSE-2.0.txt"
-                    distribution "repo"
-                }
-            }
-
-            developers {
-                developer {
-                    id  'JeffersonRojas'
-                    name 'Jefferson Rojas'
-                    email 'fejerson108@gmail.com'
-                }
-            }
-            scm {
-                connection 'https://github.com/JeffersonRojas/ViewUtils.git'
-                developerConnection 'JeffersonRojas/ViewUtils'
-                url 'https://github.com/JeffersonRojas/ViewUtils'
-
-            }
-        }
+    devs = {
+        devJeffersonRojas
     }
+
+    licenseName = 'The MIT License'
+    licenseUrl = 'https://opensource.org/licenses/mit-license.php'
+    allLicenses = ["MIT"]
+
+    publishLibrary = true
+    publicDownloadNumbers = true
 }
 
-Properties bintrayProperties = new Properties()
-
-if (project.rootProject.file('bintray.properties').exists()) {
-    bintrayProperties.load(project.rootProject.file('bintray.properties').newDataInputStream())
-}
-
-bintray {
-    user = bintrayProperties.getProperty('user')
-    key = bintrayProperties.get('apikey')
-    configurations = ['archives']
-    pkg {
-        repo = 'maven'
-        name = 'viewutils'
-        userOrg = bintrayProperties.getProperty('bintray.user')
-        licenses = ['Apache-2.0']
-        vcsUrl = 'https://github.com/JeffersonRojas/ViewUtils.git'
-        publish = true
-        version {
-            name = '1.0.6'
-            desc = 'A library for android which helps you to custom a some views more easily.'
-            released = new Date()
-            vcsTag = '1.0.6'
-        }
-    }
-}
+apply from: 'https://raw.githubusercontent.com/JeffersonRojas/JCenter/master/AndroidBintray.gradle'

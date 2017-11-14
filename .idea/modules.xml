@@ -3,16 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ViewUtils.iml" filepath="$PROJECT_DIR$/ViewUtils.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ViewUtils.iml" filepath="$PROJECT_DIR$/ViewUtils.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ViewUtils.iml" filepath="$PROJECT_DIR$/ViewUtils.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ViewUtils.iml" filepath="$PROJECT_DIR$/ViewUtils.iml" />
       <module fileurl="file://$PROJECT_DIR$/demo/demo.iml" filepath="$PROJECT_DIR$/demo/demo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/demo/demo.iml" filepath="$PROJECT_DIR$/demo/demo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/demo/demo.iml" filepath="$PROJECT_DIR$/demo/demo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/demo/demo.iml" filepath="$PROJECT_DIR$/demo/demo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/viewutils/viewutils.iml" filepath="$PROJECT_DIR$/viewutils/viewutils.iml" />
-      <module fileurl="file://$PROJECT_DIR$/viewutils/viewutils.iml" filepath="$PROJECT_DIR$/viewutils/viewutils.iml" />
-      <module fileurl="file://$PROJECT_DIR$/viewutils/viewutils.iml" filepath="$PROJECT_DIR$/viewutils/viewutils.iml" />
       <module fileurl="file://$PROJECT_DIR$/viewutils/viewutils.iml" filepath="$PROJECT_DIR$/viewutils/viewutils.iml" />
     </modules>
   </component>
